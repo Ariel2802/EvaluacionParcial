@@ -60,28 +60,6 @@ public class MainActivity extends AppCompatActivity {
         requestJSONBandera();
     }
 
-    /*void requestImagenBandera() {
-        String url = "http://www.geognos.com/api/en/countries/info/" + codPais + ".json";
-        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                new com.android.volley.Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            Glide.with(MainActivity.this).load("http://www.geognos.com/api/en/countries/flag/"
-                                    + codPais + ".png").circleCrop().into(imgPais);
-                        } catch (JSONException ex) {
-                            System.out.println(ex.toString());
-                        }
-                    }
-                }, new com.android.volley.Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError ex) {
-                System.out.println(ex.toString());
-            }
-        });
-        requestQueue.add(jsonRequest);
-    }*/
-
     void requestJSONALL() {
         String url = "http://www.geognos.com/api/en/countries/info/all.json";
 
@@ -96,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
                             System.out.println(jsonArray.toString());
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject json = jsonArray.getJSONObject(i);
-                                if(pais.equalsIgnoreCase(json.getString("Name"))) {
+                                if (pais.equalsIgnoreCase(json.getString("Name"))) {
                                     codPais = codigos.getString(i);
                                     requestJSONBandera();
-                                break;
+                                    break;
                                 }
                             }
                         } catch (JSONException e) {

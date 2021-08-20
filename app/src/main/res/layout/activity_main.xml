@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnMapa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:layout_marginEnd="85dp"
-        android:onClick="abrirMapa"
-        android:text="Ver Mapa" />
-
     <ImageView
 
         android:id="@+id/imgPais"
@@ -30,27 +18,28 @@
         android:layout_marginTop="279dp" />
 
     <Button
-        android:id="@+id/btnPais"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="397dp"
-        android:layout_marginEnd="240dp"
-        android:onClick="api2"
-        android:text="Api 2" />
-
-    <Button
         android:id="@+id/btnASelectImg"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="181dp"
-        android:layout_marginEnd="105dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="179dp"
+        android:layout_marginEnd="201dp"
         android:onClick="OpenGallery"
         android:text="Seleccionar Imagen" />
+
+    <Button
+        android:id="@+id/btnMapa"
+        android:layout_width="163dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="179dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="abrirMapa"
+        android:text="Mapa" />
 
     <ImageView
 
@@ -74,13 +63,13 @@
 
     <EditText
         android:id="@+id/txtJSON"
-        android:layout_width="379dp"
-        android:layout_height="245dp"
+        android:layout_width="381dp"
+        android:layout_height="309dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginBottom="17dp"
         android:editable="false"
         android:ems="10"

@@ -26,7 +26,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_map);
         Bundle bundle = getIntent().getExtras();
         rectangulo = (Rectangulo) bundle.getSerializable("rectangle");
-        //Llena una lista con los datos de lasfacultades
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.miMapa);
@@ -38,42 +37,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mapa = googleMap;
 
-        //Pone los marcadores de acuerdo a la lista creada en onCreate
         ponerRectangulo();
         centrar();
         mapa.setMapType(2);
-
-        /*mapa.setInfoWindowAdapter(new InfoAdapter(MapActivity.this));
-
-        mapa.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                Toast.makeText(MapActivity.this,
-                        ("Información de: " + marker.getTitle()), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mapa.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                marker.showInfoWindow();
-                Toast.makeText(MapActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });*/
     }
 
     private void ponerRectangulo() {
-
-        /*
-        west, east, north, south,
-        -|
-        west -12 long
-        east 5 long
-        north 45 lat
-        south, 34.5 lat
-        * */
-
 
         PolylineOptions lineas = new PolylineOptions()
                 .add(new LatLng(rectangulo.getNorth(), rectangulo.getEast()))
@@ -85,20 +54,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         lineas.color(Color.RED);
 
         mapa.addPolyline(lineas);
-
-
-        LatLng latLng;
-        /*for (int i = 0; i < marcadores.size(); i++) {
-            facultad = marcadores.get(i);
-
-            latLng = new LatLng(facultad.getLat(), facultad.getLng());
-
-            mapa.addMarker(new MarkerOptions()
-                    .position(latLng)
-                    .title(facultad.getFacultad())
-                    .snippet(facultad.toString()));
-        }*/
-
     }
 
     public void centrar() {
